@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     tools:context="micfil.nimor.Main"
-    android:background="@color/darkGrey">
+    android:background="@color/mainGrey">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -32,24 +32,23 @@
 
         <ImageButton
             style="@style/BasicButton"
-            app:srcCompat="@drawable/last-track-left-arrow"
             android:contentDescription="prev"
-            />
+            app:srcCompat="@drawable/prev" />
 
         <ImageButton
             android:contentDescription="play"
-            app:srcCompat="@drawable/music-player-play"
+            app:srcCompat="@drawable/play"
             style="@style/BasicButton"/>
 
         <ImageButton
             android:contentDescription="pause"
-            app:srcCompat="@drawable/music-player-pause-lines"
+            app:srcCompat="@drawable/pause"
             android:visibility="gone"
             style="@style/BasicButton"/>
 
         <ImageButton
             android:contentDescription="next"
-            app:srcCompat="@drawable/skip-track"
+            app:srcCompat="@drawable/next"
             style="@style/BasicButton"/>
 
     </LinearLayout>
