@@ -1,0 +1,27 @@
+#main-menu {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 33%;
+	height: 100%;
+	background: black;
+	transition: transform cubic-bezier(0.25,0,0,1) 300ms;
+	transform: translate3d(-100%, 0, 0);
+}
+
+#main-menu.active {
+	transform: translate3d(0, 0, 0);
+}
+
+#main-menu .btn-toggle-menu {
+	position: absolute;
+	top: 40px;
+	right: -52.5px;
+	font-size: 2em;
+	color: white;
+	background: black;
+	border-top-right-radius: 15px;
+	border-top-left-radius: 0;
+	border-bottom-right-radius: 15px;
+	border-bottom-left-radius: 0;
+}
