@@ -1,0 +1,47 @@
+/* You can add global styles to this file, and also import other style files */
+
+/* Scrollable Menu */
+.btn-toggle-menu {
+	font-size: 3em;
+}
+
+#main-menu {
+	width: 33%;
+	height: 100%;
+	position: fixed;
+	left: 0;
+	top: 0;
+	padding: 20px 0;
+}
+
+/*#main-menu .btn-toggle-menu {
+	float: right;
+}
+
+#main-menu .btn-toggle-menu:after {
+	clear: both;
+}*/
+
+#main-menu .scrollable-menu {
+	/*display: none;*/
+	transition: all .5s linear;
+	transform: translate3d(-100%, 0, 0);
+}
+
+#main-menu .scrollable-menu .main-menu {
+	/*display: -webkit-flex;
+    display: flex;*/
+	display: grid;
+	grid-gap: 10px;
+	padding: 10px;
+}
+
+#main-menu .scrollable-menu .main-menu > li {
+	/*border: 1px solid #000;
+    padding: 20px;*/
+    grid-template-rows: 100px;
+}
+
+#main-menu.active .scrollable-menu {
+	transform: translate3d(0, 0, 0);
+}
