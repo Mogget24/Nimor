@@ -42,7 +42,7 @@ body {
 
 /* END MENU */
 
-
+/* Planets! */
 #planet {
 	position: relative;
 	top: 100px;
@@ -86,4 +86,27 @@ body {
 @keyframes rotate {
 	0% {background-position: 0 0;}
 	100% {background-position: 630px 0;}
+}
+
+
+/* Overlay changes */
+.modal.modal-planet {
+	bottom: initial;
+	left: initial;
+	right: 10px;
+	min-width: 33%;
+}
+
+.modal.modal-planet .modal-content {
+	background: rgba(0,0,0,.5);
+	color: #fff;
+}
+
+.modal.modal-planet .close[data-dismiss] {
+	color: #fff;
+	opacity: .9 !important;
+}
+
+.modal-backdrop {
+	opacity: 0.1 !important;
 }
