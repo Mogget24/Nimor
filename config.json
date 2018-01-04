@@ -1,0 +1,20 @@
+{
+	"albums" : [
+		{
+			"name" : "Submission",
+			"year": 2012,
+			"tracks" : [
+				{
+					"title": "Winter",
+					"durantion": "120s",
+					"media": "insert_url_here"
+				},
+				{
+					"title": "Summer",
+					"durantion": "120s",
+					"media": "insert_url_here"
+				}
+			]
+		}
+	]
+}
