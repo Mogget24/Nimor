@@ -16,5 +16,16 @@
 				}
 			]
 		}
+	],
+	"menu" : [
+		{
+			"text": "Home",
+			"url": "/index.html"
+		},
+		{
+			"text": "Lyrics",
+			"url": "/lyrics.html"
+		}
 	]
+		
 }
