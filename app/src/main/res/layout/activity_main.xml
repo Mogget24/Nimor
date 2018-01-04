@@ -32,22 +32,28 @@
         android:layout_margin="20dp">
 
         <ImageButton
+            android:id="@+id/control_prev"
             style="@style/BasicButton"
             android:contentDescription="prev"
             app:srcCompat="@drawable/prev_w" />
 
         <ImageButton
+            android:id="@+id/control_play"
+            android:onClick="Play"
             android:contentDescription="play"
             app:srcCompat="@drawable/play_w"
             style="@style/BasicButton"/>
 
         <ImageButton
+            android:id="@+id/control_pause"
+            android:onClick="Pause"
             android:contentDescription="pause"
             app:srcCompat="@drawable/pause_w"
             android:visibility="gone"
             style="@style/BasicButton"/>
 
         <ImageButton
+            android:id="@+id/control_next"
             android:contentDescription="next"
             app:srcCompat="@drawable/next_w"
             style="@style/BasicButton"/>
