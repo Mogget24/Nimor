@@ -24,12 +24,13 @@ class App extends Component {
 	render() {
 		return (
 			<div id="main-menu" className={this.state.isActive ? 'active' : ''} >
+				
+				<Menu />
+
 				<button className="btn btn-toggle-menu" onClick={this.toggleMenu.bind(this)}>
 					<i className="fa fa-bars" aria-hidden="true"></i>
 				</button>
-				<nav className="menu scrollable-menu">
-					<Menu />
-				</nav>
+				
 			</div>
 		);
 	}
