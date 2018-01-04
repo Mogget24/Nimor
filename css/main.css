@@ -140,7 +140,7 @@ body {
 	right: 10px;*/
 	width: 100px;
 	height: 100px;
-	background: url(../images/planet_sprite_green.png) 0 0 repeat;
+	background: url(../images/planet_sprite_blue.png) 0 0 repeat;
 	animation: rotate 5s linear infinite;
 	transform: translate(600px, 50px);
 }
