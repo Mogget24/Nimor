@@ -12,6 +12,7 @@
 		<div id="main-menu">
 			
 			<ul class="menu-wrapper list-unstyled">
+				<li class="mm logo">Nimor</li>
 				<li>
 					<a href="/">Home</a>
 				</li>
@@ -25,7 +26,9 @@
 
 		<main class="main-content">
 
-			<div id="planet"></div>
+			<div class="planet" id="p01"></div>
+
+			<div class="planet" id="p02"></div>
 
 			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#planet-details">
 				Launch demo modal
