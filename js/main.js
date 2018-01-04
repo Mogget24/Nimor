@@ -10,5 +10,17 @@ $(document).ready(function(){
 
 	})
 	
+	// Switch active planet
+	$(document).on('click', '.planet:not(.active)', function(e){
+		e.preventDefault()
+
+		var that = $(this),
+			active = $('.planet.active')
+
+		// Add class
+		that.addClass('active')
+		active.removeClass('active')
+
+	})
 
 })

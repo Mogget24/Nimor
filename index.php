@@ -26,13 +26,9 @@
 
 		<main class="main-content">
 
-			<div class="planet" id="p01"></div>
+			<div class="planet active" id="p01"></div>
 
-			<div class="planet" id="p02"></div>
-
-			<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#planet-details">
-				Launch demo modal
-			</button>
+			<div class="planet" id="p02" data-toggle="modal" data-target="#planet-details"></div>
 
 		</main>
 
