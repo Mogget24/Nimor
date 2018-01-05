@@ -13,14 +13,33 @@
         android:layout_height="0dp"
         android:layout_weight="1"
         android:gravity="center"
+        android:layout_margin="10dp"
+        android:orientation="vertical"
         >
 
         <ImageView
             android:id="@+id/cover"
-            android:layout_width="300dp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/nimor"
+            android:importantForAccessibility="no"
             />
+
+        <TextView
+            android:id="@+id/song_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_margin="20dp"
+            android:textSize="24sp"
+            android:textColor="@color/white"
+            android:text="Title goes here"
+            />
+
+        <SeekBar
+            android:id="@+id/seekbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
 
@@ -34,27 +53,27 @@
         <ImageButton
             android:id="@+id/control_prev"
             style="@style/BasicButton"
-            android:contentDescription="prev"
+            android:contentDescription="@string/previous"
             app:srcCompat="@drawable/prev_w" />
 
         <ImageButton
             android:id="@+id/control_play"
             android:onClick="Play"
-            android:contentDescription="play"
+            android:contentDescription="@string/play"
             app:srcCompat="@drawable/play_w"
             style="@style/BasicButton"/>
 
         <ImageButton
             android:id="@+id/control_pause"
             android:onClick="Pause"
-            android:contentDescription="pause"
+            android:contentDescription="@string/pause"
             app:srcCompat="@drawable/pause_w"
             android:visibility="gone"
             style="@style/BasicButton"/>
 
         <ImageButton
             android:id="@+id/control_next"
-            android:contentDescription="next"
+            android:contentDescription="@string/next"
             app:srcCompat="@drawable/next_w"
             style="@style/BasicButton"/>
 

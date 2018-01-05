@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Nimor</string>
+    <string name="previous">Go to previous song</string>
+    <string name="next">Go to next song</string>
+    <string name="play" translatable="false">Play</string>
+    <string name="pause">Pause current song</string>
 </resources>
