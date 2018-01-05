@@ -2,16 +2,31 @@
 	"albums" : [
 		{
 			"name" : "Submission",
-			"year": 2012,
+			"year": 2013,
 			"tracks" : [
 				{
+					"title": "Fall",
+					"durantion": "12:10",
+					"media": "insert_url_here"
+				},
+				{
 					"title": "Winter",
-					"durantion": "120s",
+					"durantion": "15:22",
+					"media": "insert_url_here"
+				},
+				{
+					"title": "Spring",
+					"durantion": "15:06",
 					"media": "insert_url_here"
 				},
 				{
 					"title": "Summer",
-					"durantion": "120s",
+					"durantion": "13:32",
+					"media": "insert_url_here"
+				},
+				{
+					"title": "Winter",
+					"durantion": "06:59",
 					"media": "insert_url_here"
 				}
 			]
