@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <RelativeLayout
+        android:id="@+id/controls_wrapper"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="right">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/toggle_menu"
@@ -15,5 +17,18 @@
             android:background="@android:drawable/ic_menu_close_clear_cancel"
             android:onClick="hideMenu" />
 
-    </LinearLayout>
-</LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/menu_list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@id/controls_wrapper"
+        android:layout_marginTop="50dp">
+
+        
+
+    </RelativeLayout>
+
+</RelativeLayout>
