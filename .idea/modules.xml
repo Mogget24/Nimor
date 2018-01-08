@@ -3,11 +3,9 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/Nimor.iml" filepath="$PROJECT_DIR$/Nimor.iml" />
-      <module fileurl="file://$PROJECT_DIR$/Nimor.iml" filepath="$PROJECT_DIR$/Nimor.iml" />
       <module fileurl="file://C:\Users\micfi\AndroidStudioProjects\Nimor\Nimor.iml" filepath="C:\Users\micfi\AndroidStudioProjects\Nimor\Nimor.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
       <module fileurl="file://C:\Users\micfi\AndroidStudioProjects\Nimor\app\app.iml" filepath="C:\Users\micfi\AndroidStudioProjects\Nimor\app\app.iml" />
-      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
   </component>
 </project>

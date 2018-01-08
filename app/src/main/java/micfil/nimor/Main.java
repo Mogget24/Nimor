@@ -1,5 +1,6 @@
 package micfil.nimor;
 
+import android.content.Intent;
 import android.graphics.Typeface;
 import android.media.AudioManager;
 import android.media.MediaPlayer;
@@ -7,7 +8,9 @@ import android.opengl.Visibility;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.SeekBar;
@@ -23,6 +26,7 @@ public class Main extends AppCompatActivity {
     SeekBar seekBar;
     Handler handler;
     Runnable runnable;
+    Button toggleMenu;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -115,5 +119,13 @@ public class Main extends AppCompatActivity {
         super.onDestroy();
         song.release();
         handler.removeCallbacks(runnable);
+    }
+
+    // Show Menu
+    public void showMenu(View v){
+
+        Intent intent = new Intent (this, Menu.class);
+        startActivity(intent);
+
     }
 }
