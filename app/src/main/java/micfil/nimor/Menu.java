@@ -60,19 +60,6 @@ public class Menu extends AppCompatActivity {
 
     private class FetchMenu extends AsyncTask<String, String, String> {
 
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            Log.d("test", "1");
-
-            /*
-            pd = new ProgressDialog(MainActivity.this);
-            pd.setMessage("Please wait");
-            pd.setCancelable(false);
-            pd.show();
-            */
-        }
-
         protected String doInBackground(String... params) {
 
             HttpURLConnection connection = null;
@@ -122,8 +109,6 @@ public class Menu extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
 
-            //Log.d("result", result);
-
             super.onPostExecute(result);
 
             try {
@@ -131,10 +116,7 @@ public class Menu extends AppCompatActivity {
                 fetchedJson = new JSONObject(result);
                 JSONArray albums = fetchedJson.getJSONArray("albums");
 
-
                 for(int i = 0; i < albums.length(); i++){
-
-                    Log.d("i", Integer.toString(i));
 
                     JSONObject album = albums.getJSONObject(i);
                     String albumName = album.getString("name");
@@ -146,8 +128,6 @@ public class Menu extends AppCompatActivity {
                             ViewGroup.LayoutParams.WRAP_CONTENT));
                     element.setTextColor(Color.WHITE);
                     element.setBackgroundColor(Color.BLACK);
-
-                    Log.d("mah", albumName);
 
                     menuList.addView(element);
 
