@@ -124,6 +124,8 @@ public class Main extends AppCompatActivity {
     // Show Menu
     public void showMenu(View v){
 
+        Log.d("ou", "ou");
+
         Intent intent = new Intent (this, Menu.class);
         startActivity(intent);
 

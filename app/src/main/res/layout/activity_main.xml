@@ -17,10 +17,10 @@
             android:id="@+id/toggle_menu"
             android:layout_width="40dp"
             android:layout_height="40dp"
-            android:padding="10dp"
             android:background="@drawable/menu"
             android:backgroundTint="@color/white"
-            android:onClick="showMenu" />
+            android:onClick="showMenu"
+            android:clickable="true"/>
 
     </LinearLayout>
 
