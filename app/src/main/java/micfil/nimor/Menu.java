@@ -56,7 +56,7 @@ public class Menu extends AppCompatActivity {
             }
         }
 
-        Log.d("ou", Integer.toString(texts.size()));
+        Log.d("ou", Integer.toString(texts.size())); 
 
 
         // Create Menu

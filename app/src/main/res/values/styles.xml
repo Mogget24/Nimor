@@ -10,9 +10,9 @@
 
     <style name="BasicButton">
         <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_height">45dp</item>
         <item name="android:layout_weight">1</item>
-        <item name="android:padding">20dp</item>
+        <item name="android:padding">5dp</item>
         <item name="android:background">@android:color/transparent</item>
         <item name="android:scaleType">fitCenter</item>
     </style>
