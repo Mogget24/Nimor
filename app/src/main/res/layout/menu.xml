@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/lightGrey"
+    android:background="@color/black"
     android:id="@+id/menu_container">
 
     <RelativeLayout
@@ -15,9 +15,9 @@
 
         <TextView
             android:layout_width="wrap_content"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:text="Nimor"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:layout_centerInParent="true"
             />
 
@@ -26,6 +26,7 @@
             android:layout_width="40dp"
             android:layout_height="40dp"
             android:background="@drawable/close"
+            android:backgroundTint="@color/white"
             android:onClick="hideMenu"
             android:padding="10dp"
             android:layout_alignParentEnd="true"
@@ -40,6 +41,67 @@
         android:orientation="vertical"
         android:layout_below="@id/controls_wrapper"
         android:layout_marginTop="50dp">
+
+        <!-- Albums -->
+        <RelativeLayout
+            android:id="@+id/album1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:clickable="true"
+            android:onClick="expandSection">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Sub"
+                android:layout_marginLeft="15dp"
+                android:textSize="20sp"/>
+            
+            <ImageView
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:src="@drawable/expand"
+                android:tint="@color/white"
+                android:layout_alignParentEnd="true"/>
+
+        </RelativeLayout>
+
+        <!-- Songs -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/album1"
+            android:orientation="vertical"
+            android:visibility="gone">
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:clickable="true"
+                >
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Song"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="20sp"/>
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:src="@drawable/expand"
+                    android:tint="@color/white"
+                    android:layout_alignParentEnd="true"/>
+
+            </RelativeLayout>
+
+
+
+        </LinearLayout>
+
 
     </RelativeLayout>
 

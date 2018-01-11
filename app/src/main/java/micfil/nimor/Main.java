@@ -75,6 +75,24 @@ public class Main extends AppCompatActivity {
             }
         });
 
+        // Started song when returning from menu
+        if(savedInstanceState == null) {
+            Bundle extras = getIntent().getExtras();
+            if (extras != null) {
+                String method = extras.getString("switchSong");
+
+                if (method.equals("myMethod")) {
+                    //Call method here!
+                    Log.d("orco", "caccio");
+                }
+                else {
+                    Log.d("mah", "pal");
+                }
+
+            }
+        }
+
+
     }
 
     // Play Music

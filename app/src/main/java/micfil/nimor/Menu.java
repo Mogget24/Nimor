@@ -2,6 +2,7 @@ package micfil.nimor;
 
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -39,28 +40,27 @@ public class Menu extends AppCompatActivity {
     RelativeLayout menuList, menuContainer;
     boolean isMenuGenerated = false;
     JSONObject fetchedJson;
+    Typeface MetalMacabre;
 
     @Override
     protected void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.menu);
 
-        menuList = findViewById(R.id.menu_list);
-        menuContainer = findViewById(R.id.menu_container);
+        // Setup font
+        MetalMacabre = Typeface.createFromAsset(getAssets(),  "fonts/MetalMacabre.ttf");
 
-        ArrayList<TextView> texts = new ArrayList<TextView>();
+        menuList = findViewById(R.id.menu_list);
+        menuContainer = findViewById(R.id.controls_wrapper);
 
         for (int i = 0; i < menuContainer.getChildCount(); i++){
             if(menuContainer.getChildAt(i) instanceof TextView){
-                texts.add( (TextView) menuContainer.getChildAt(i) );
+                ( (TextView) menuContainer.getChildAt(i)).setTypeface(MetalMacabre);;
             }
         }
 
-        Log.d("ou", Integer.toString(texts.size())); 
-
-
         // Create Menu
-        new FetchMenu().execute();
+        AsyncTask task = new FetchMenu().execute();
 
     }
 
@@ -69,6 +69,33 @@ public class Menu extends AppCompatActivity {
 
         Intent intent = new Intent (this, Main.class);
         startActivity(intent);
+
+    }
+
+    // Expand section in the menu
+    public void expandSection(View v){
+
+        int current = menuList.indexOfChild(v);
+        View next = menuList.getChildAt(current + 1);
+
+        // Expand
+        if(next.getVisibility() == View.GONE){
+
+            // Change icon
+            //for(int i = 0; )
+
+            // Show children
+            next.setVisibility(View.VISIBLE);
+        } else {
+
+            // Change icon
+            //for(int i = 0; )
+
+            // Hide children
+            next.setVisibility(View.GONE);
+
+        }
+
 
     }
 
@@ -142,8 +169,21 @@ public class Menu extends AppCompatActivity {
                             ViewGroup.LayoutParams.WRAP_CONTENT));
                     element.setTextColor(Color.WHITE);
                     element.setBackgroundColor(Color.BLACK);
+                    element.setTypeface(MetalMacabre);
 
-                    menuList.addView(element);
+                    // Has to become expander/collapser + loop on songs
+                    element.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+
+                            Intent intent = new Intent (getBaseContext(), Main.class);
+                            intent.putExtra("switchSong", "myMethod");
+                            startActivity(intent);
+
+                        }
+                    });
+
+                    //menuList.addView(element);
 
                 }
 

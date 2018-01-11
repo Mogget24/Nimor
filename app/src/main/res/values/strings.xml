@@ -5,4 +5,5 @@
     <string name="play" translatable="false">Play</string>
     <string name="pause">Pause current song</string>
     <string name="nimor" translatable="false">Nimor</string>
+    <string name="id">id</string>
 </resources>
