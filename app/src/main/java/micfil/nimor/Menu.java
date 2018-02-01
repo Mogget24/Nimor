@@ -11,6 +11,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.RelativeLayout;
@@ -37,7 +38,7 @@ import java.util.ArrayList;
 
 public class Menu extends AppCompatActivity {
 
-    RelativeLayout menuList, menuContainer;
+    RelativeLayout menuList, menuContainer, album1, album2;
     boolean isMenuGenerated = false;
     JSONObject fetchedJson;
     Typeface MetalMacabre;
@@ -52,11 +53,38 @@ public class Menu extends AppCompatActivity {
 
         menuList = findViewById(R.id.menu_list);
         menuContainer = findViewById(R.id.controls_wrapper);
+        album1 = findViewById(R.id.album1);
 
+        /*
+        album1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                expandSection(view);
+            }
+        });
+        */
+
+        // Set the font for all views
         for (int i = 0; i < menuContainer.getChildCount(); i++){
             if(menuContainer.getChildAt(i) instanceof TextView){
                 ( (TextView) menuContainer.getChildAt(i)).setTypeface(MetalMacabre);;
             }
+        }
+
+        // Make each "album" clickable
+        for (int i = 0; i < menuList.getChildCount(); i++){
+            if(getStringId(menuList.getChildAt(i)).contains("album")){
+
+                final int currentIndex = i;
+
+                menuList.getChildAt(i).setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View view) {
+                        expandSection(menuList.getChildAt(currentIndex));
+                    }
+                });
+            }
+
         }
 
         // Create Menu
@@ -64,7 +92,13 @@ public class Menu extends AppCompatActivity {
 
     }
 
-    // Hide Menu
+    // Get the string ID of a view
+    public static String getStringId(View view) {
+        if (view.getId() == -1) return "no-id";
+        else return view.getResources().getResourceName(view.getId());
+    }
+
+    // Hide Menu and re-enable main
     public void hideMenu(View v){
 
         Intent intent = new Intent (this, Main.class);
@@ -73,23 +107,42 @@ public class Menu extends AppCompatActivity {
     }
 
     // Expand section in the menu
-    public void expandSection(View v){
+    public void expandSection(View v){ //<- try this
 
         int current = menuList.indexOfChild(v);
+
+        // Clicked view is a RelativeLayout for sure
+        RelativeLayout currentView = (RelativeLayout) v;
+
+        ImageView currentImage = null;
+
+        // Find the children to change
+        for (int i = 0; i < currentView.getChildCount(); i++){
+            if(currentView.getChildAt(i) instanceof ImageView){
+                currentImage = (ImageView) currentView.getChildAt(i);
+            }
+        }
+
         View next = menuList.getChildAt(current + 1);
+
+        // TEMPORARY PICCONE
+        album2 = findViewById(R.id.album2);
 
         // Expand
         if(next.getVisibility() == View.GONE){
 
             // Change icon
-            //for(int i = 0; )
+            currentImage.setImageResource(R.drawable.collapse);
 
             // Show children
             next.setVisibility(View.VISIBLE);
+
+            /*album2 // CHANGE PICCONE -> LAYOUT BELOW VALUE CHANGES */
+
         } else {
 
             // Change icon
-            //for(int i = 0; )
+            currentImage.setImageResource(R.drawable.expand);
 
             // Hide children
             next.setVisibility(View.GONE);
@@ -176,14 +229,14 @@ public class Menu extends AppCompatActivity {
                         @Override
                         public void onClick(View view) {
 
-                            Intent intent = new Intent (getBaseContext(), Main.class);
-                            intent.putExtra("switchSong", "myMethod");
-                            startActivity(intent);
+                        Intent intent = new Intent (getBaseContext(), Main.class);
+                        intent.putExtra("switchSong", "myMethod");
+                        startActivity(intent);
 
                         }
                     });
 
-                    //menuList.addView(element);
+                    //menuList.addView(element); <- TEMPORARY: ENABLE THIS TO MAKE IT WORK
 
                 }
 
